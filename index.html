@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sati's Pure Honey | Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+  <div class="cursor"></div>
+  <div class="page1">
+    <nav class="navbar">
+      <h1 class="title">Sati's Pure Honey</h1>
+      <ul class="list-container">
+        <li class="list"><a href="index.html">Home</a></li>
+        <li class="list"><a href="about.html">About</a></li>
+        <li class="list"><a href="products.html">Products</a></li>
+        <li class="list"><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-canvas">
+        <video src="honey-motion.mp4" loop autoplay muted ></video>
+        <div class="title-wrapper">
+          <h2>Taste the Purity of the Hills</h2>
+          <p>From Flowers to You - 99.9% Natural</p>
+          <p>Golden Goodness You Can Trust</p>
+          <p>Honey So Pure, You'll Taste the Difference</p>
+        </div>
+    </div>
+
+  </div>
+  <div class="page2">
+    <div class="content">
+      <div class="canvas"><img src="images/honey-hero.jpg"></div>
+      <div class="desc-wrapper">
+        <h3>Welcome to Sati's Pure Honey</h3>
+        <p>Owned by <strong>Ganesh Sati</strong>, we bring you premium, natural honey from the pristine hills of India.</p>
+        <p>गणेश सती द्वारा संचालित, हम आपको भारत के पहाड़ों से शुद्ध प्राकृतिक शहद प्रदान करते हैं।</p>
+        <button class="btn">Find More</button>
+      </div>
+    </div>
+  </div>
+  <div class="page3">
+    <div class="canvas"><img src="images/recipe-book.jpg"></div>
+  </div>
+  <div class="page4">
+    <p class="header">Explore our Bee's</p>
+    <div class="card-wrapper">
+      <div class="card">
+        <div class="canvas"><img src="images/queen-bee.webp" alt=""></div>
+        <div class="desc-area">
+          <p class="title">Queen Bee</p>
+          <p class="desc">A queen bee is typically an adult, mated female (gyne) that lives in a colony or hive of honey bees.</p>
+          <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Queen_bee">Read More</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="canvas"><img src="images/drone-bee.webp" alt=""></div>
+        <div class="desc-area">
+          <p class="title">Drone Bee</p>
+          <p class="desc">A drone is a male bee. Unlike the female worker bee, a drone has no stinger.His only role is to mate with a maiden queen in nuptial flight.</p>
+          <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Drone_(bee)">Read More</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="canvas"><img src="images/worker-bee.jpg" alt=""></div>
+        <div class="desc-area">
+          <p class="title">Worker Bee</p>
+          <p class="desc">A worker bee is any female bee that lacks the reproductive capacity of the colony's queen bee and carries out the majority of tasks needed for the functioning of the hive.</p>
+          <a class="link" target="_blank" href="https://en.wikipedia.org/wiki/Worker_bee">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page5">
+    <div class="content">
+      <div class="end-credits">
+        <p class="title">Sati's Pure Honey</p>
+        <p class="desc">All Rights Reserved</p>
+      </div>
+      <div class="others">
+        <p class="other">Terms of use</p>
+        <p class="other">Privacy Policy</p>
+        <p class="other">Feedback</p>
+      </div>
+      <div class="handles">
+        <div class="handle">
+          <ion-icon name="call-outline"></ion-icon>
+          <p class="handle">7983967442</p>
+        </div>
+        <div class="handle">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+          <p class="handle">9536221807</p>
+        </div>
+        <div class="handle">
+          <ion-icon name="mail-outline"></ion-icon>
+          <p class="handle">rsati082@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script>
+    const tl = gsap.timeline()
+
+    tl.from('.navbar .title',{
+      y: -50,
+      opacity: 0,
+      duration: 1,
+      delay:1,
+    })
+    tl.from('.list-container .list',{
+      y: -50,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.2,
+    })
+
+    document.body.addEventListener('mousemove', (e) => {
+      const cursor = document.querySelector('.cursor');
+      gsap.to('.cursor',{
+        x:e.pageX,
+        y:e.pageY
+      })
+    });
+
+    tl.from('.page2',{
+      duration: 1,
+      x:-200,
+      scrollTrigger: {
+        scroller:'body',
+        trigger: '.page2 .canvas',
+        start: 'top 80%',
+        end:'top 40%',
+        scrub: 0.8,
+      },
+    })
+
+    tl.from('.page3 .canvas',{
+      duration: 1,
+      y:400,
+      scale:0.5,
+      scrollTrigger: {
+        scroller:'body',
+        trigger: '.page3 .canvas',
+        start: 'top 100%',
+        end:'top 70%',
+        scrub: 0.8,
+      },
+    })
+
+    tl.from('.page4 .card',{
+      duration: 1,
+      y: 400,
+      stagger: 0.2,
+      scrollTrigger: {
+        scroller:'body',
+        trigger: '.page4 .card',
+        start: 'top 90%',
+        end:'top 60%',
+        scrub: 0.8,
+      },
+    })
+    
+  </script>
+</body>
+</html>
